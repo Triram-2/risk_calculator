@@ -7,21 +7,21 @@ def calculation():
     Получает аргументы прямо через глобальную область видимости.
     
     Args:
-        entry_point (int): Точка входа.
-        stop_loss (int): Стоп-лосс.
-        deposit(int): Депозит.
-        shoulder(int): Плечо.
-        risk_menegment(int): Риск-менеджмент(% от депозита, который можно потерять за сделку.)
+        entry_point (float): Точка входа.
+        stop_loss (float): Стоп-лосс.
+        deposit(float): Депозит.
+        shoulder(float): Плечо.
+        risk_menegment(float): Риск-менеджмент(% от депозита, который можно потерять за сделку.)
     
     Return:
         Выводит на заготовленное место результат расчетов.
     '''
     try:
-        entry_point = int(input_entry_point.get())
-        stop_loss = int(input_stop_loss.get())
-        deposit = int(input_deposit.get())
-        shoulder = int(input_shoulder.get())
-        risk_menegment = int(input_risk_menegment.get())
+        entry_point = float(input_entry_point.get())
+        stop_loss = float(input_stop_loss.get())
+        deposit = float(input_deposit.get())
+        shoulder = float(input_shoulder.get())
+        risk_menegment = float(input_risk_menegment.get())
         
         if deposit == 0:
             messagebox.showerror("Ошибка", "Если у Вас депозит 0, Вы не можете зайти в сделку!")
