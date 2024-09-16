@@ -28,7 +28,7 @@ def calculation():
             return
         
         max_loss = (deposit * risk_menegment) / 100
-        lot_size = max_loss / ((entry_point - stop_loss) * shoulder)
+        lot_size = max_loss / ((entry_point - stop_loss) / shoulder)
         for_output.config(text=f"В сделку следует заходить на: {lot_size:.4f} единиц.")
     except ValueError:
         messagebox.showerror("Ошибка", "Пожалуйста, введите числовые значения.")
