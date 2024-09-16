@@ -27,8 +27,10 @@ def calculation():
             messagebox.showerror("Ошибка", "Если у Вас депозит 0, Вы не можете зайти в сделку!")
             return
         
-        max_loss = (deposit * risk_menegment) / 100
-        lot_size = max_loss / ((entry_point - stop_loss) / shoulder)
+        ub = 1 - stop_loss / entry_point
+        ub = f'{ub:.3f}'
+        ub = float(ub)
+        lot_size = (((deposit * (risk_menegment / 100)) / (ub)) / entry_point) * shoulder
         for_output.config(text=f"В сделку следует заходить на: {lot_size:.4f} единиц.")
     except ValueError:
         messagebox.showerror("Ошибка", "Пожалуйста, введите числовые значения.")
